@@ -162,6 +162,17 @@ The parts people might reasonably raise an eyebrow at, named up front.
   handoffs stay in your OpenWhispr notes (and in the on-disk export, if you
   enabled it) until you delete them. Anything another agent or tool can
   read there can read what Claude wrote.
+- **It only sees what OpenWhispr captured.** The skill cannot reach
+  outside its own sandbox for your context. Words spoken into another
+  app's built-in voice (LM Studio Bionic, a phone assistant, a meeting
+  tool) never enter your OpenWhispr history, so a search will not find
+  them. Dictate through OpenWhispr when you want something to be findable
+  later, and keep it findable on purpose: with Data Retention off, text is
+  pasted and nothing is stored. If you turn on "Save notes as files",
+  OpenWhispr writes Markdown to a folder you choose, and Claude can read
+  that folder directly. The app's own label says it saves "notes and
+  transcripts", so look at what actually lands in your folder before
+  relying on it as a complete record.
 - **Tested for structure, not for the app.** The test suite checks the
   manifest, the skill's frontmatter, the README's links and the absence of
   hooks or code. It does not drive a live OpenWhispr app. Command syntax
