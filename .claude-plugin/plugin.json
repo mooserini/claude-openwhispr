@@ -1,0 +1,17 @@
+{
+  "name": "openwhispr",
+  "version": "0.1.0",
+  "description": "Local-first OpenWhispr voice history and notes for Claude.",
+  "author": {
+    "name": "Thomas Kenny",
+    "url": "https://github.com/mooserini"
+  },
+  "license": "MIT",
+  "keywords": [
+    "openwhispr",
+    "dictation",
+    "voice",
+    "notes",
+    "transcription"
+  ]
+}

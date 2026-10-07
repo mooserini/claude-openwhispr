@@ -1,0 +1,15 @@
+{
+  "name": "openwhispr",
+  "owner": {
+    "name": "Thomas Kenny",
+    "url": "https://github.com/mooserini"
+  },
+  "plugins": [
+    {
+      "name": "openwhispr",
+      "source": "./",
+      "description": "Local-first OpenWhispr voice history and notes for Claude."
+    }
+  ],
+  "description": "OpenWhispr voice history and notes for Claude Code."
+}
