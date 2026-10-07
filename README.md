@@ -58,8 +58,9 @@ screenshots below are of their application; read top to bottom.
   Enterprise.
 - **Nothing learns silently.** Auto-learn from corrections is off until you
   enable it.
-- **A second trail on disk.** Optional file export saves notes and
-  transcripts as Markdown by folder, which Claude can read directly.
+- **A second trail on disk.** Optional file export saves your *notes*, and
+  the transcripts attached to them, as Markdown in a folder you choose,
+  which Claude can read directly. It does not export individual dictations.
 - **Honest runtimes.** whisper.cpp and sherpa-onnx, bundled: no Python stack
   to install, Metal on Apple Silicon, CUDA/Vulkan elsewhere, CPU fallback.
 
@@ -170,9 +171,11 @@ The parts people might reasonably raise an eyebrow at, named up front.
   later, and keep it findable on purpose: with Data Retention off, text is
   pasted and nothing is stored. If you turn on "Save notes as files",
   OpenWhispr writes Markdown to a folder you choose, and Claude can read
-  that folder directly. The app's own label says it saves "notes and
-  transcripts", so look at what actually lands in your folder before
-  relying on it as a complete record.
+  that folder directly. In the author's testing that folder held only
+  notes and the transcripts attached to them. Individual dictations never
+  landed there, so reaching those takes the CLI
+  (`openwhispr --local transcriptions list`), which is a deliberate act
+  rather than a folder you can browse.
 - **Tested for structure, not for the app.** The test suite checks the
   manifest, the skill's frontmatter, the README's links and the absence of
   hooks or code. It does not drive a live OpenWhispr app. Command syntax

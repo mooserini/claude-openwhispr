@@ -87,7 +87,7 @@ Exit codes: 0 success (at least one backend reachable for `doctor`), 1 bad args,
 - `audio delete` is local-only and dictation-only; meeting transcripts have no audio file; `--remote` errors by design.
 - Never write, update, or delete notes/transcriptions/dictionary without explicit consent; reads and searches are always safe.
 - Unattended runs stop at consent gates: `auth login`, the email-code paste, and any write need a person present. If nobody is there, report what is blocked and stop — never queue, retry-loop, or work around it.
-- File fallback: OpenWhispr can auto-save notes and transcripts as files on disk, organized by folder, with a rebuild action. When the user enables it, prefer Read/Grep against their configured save location for bulk reads; use the CLI when freshness or metadata (ids, timestamps) matters.
+- File fallback: OpenWhispr can auto-save notes, and the transcripts attached to them, as files on disk, organized by folder, with a rebuild action. Individual dictations are not exported there; reach those with `transcriptions list`. When the user enables it, prefer Read/Grep against their configured save location for bulk reads of notes; use the CLI when freshness or metadata (ids, timestamps) matters.
 
 ## Verification
 
