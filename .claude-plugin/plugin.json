@@ -6,6 +6,8 @@
     "name": "Thomas Kenny",
     "url": "https://github.com/mooserini"
   },
+  "homepage": "https://github.com/mooserini/claude-openwhispr",
+  "repository": "https://github.com/mooserini/claude-openwhispr",
   "license": "MIT",
   "keywords": [
     "openwhispr",
