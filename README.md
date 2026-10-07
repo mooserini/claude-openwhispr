@@ -167,8 +167,8 @@ The parts people might reasonably raise an eyebrow at, named up front.
   hooks or code. It does not drive a live OpenWhispr app. Command syntax
   comes from OpenWhispr's published CLI docs, and the author has run the
   commands against the live app. The author also reports using the same
-  skill text with other agents, including small local models in LM Studio
-  and OpenCode; that is a firsthand report, not something this repo's
+  skill text with other agents, including local models in LM Studio, its
+  Bionic agent app, and OpenCode; that is a firsthand report, not something this repo's
   tests cover, and how well a small model follows the consent rules will
   vary. CLI flags can change; if one drifts, please open an issue.
 - **Product claims are theirs, not ours.** Feature and pricing descriptions
