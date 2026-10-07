@@ -23,9 +23,8 @@ Then add the plugin inside Claude Code:
 One worked session, the whole product:
 
 > You: "find what I just dictated about the dentist"
-> Claude: `openwhispr --local transcriptions list --limit 50 | grep -i dentist`
-> → transcription id 42, `created_at` this morning → `transcriptions get 42`
-> → your words, quoted back with id + timestamp.
+> Claude: `openwhispr --local transcriptions list --limit 50` → picks the entries from this morning
+> → `transcriptions get 42` → your words, quoted back with id + timestamp.
 
 The skill loads as `/openwhispr:openwhispr` and Claude reaches for it
 on its own when you ask about something you said.
