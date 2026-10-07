@@ -23,8 +23,8 @@ Then add the plugin inside Claude Code:
 One worked session, the whole product:
 
 > You: "find what I just dictated about the dentist"
-> Claude: `openwhispr --local transcriptions list --limit 50` → picks the entries from this morning
-> → `transcriptions get 42` → your words, quoted back with id + timestamp.
+> Claude: `openwhispr --local transcriptions list --limit 50 --format json | jq …` (filters for "dentist")
+> → transcription id 42, `created_at` this morning → your words, quoted back with id + timestamp.
 
 The skill loads as `/openwhispr:openwhispr` and Claude reaches for it
 on its own when you ask about something you said.
@@ -69,8 +69,8 @@ screenshots below are of their application; read top to bottom.
 
 The paid connector card catches the eye first; the CLI card underneath is the
 free half. Individual dictations live in the transcriptions list (notes are
-things you made on purpose): `openwhispr --local transcriptions list --limit 50`, then
-`transcriptions get <id>`.
+things you made on purpose): `openwhispr --local transcriptions list --limit 50`
+shows IDs and times, and `--format json` adds the text.
 
 ### Per-feature model picker
 
