@@ -41,7 +41,10 @@ on its own when you ask about something you said.
 - Manages dictionary words and snippets.
 
 What it doesn't do: include assistant replies, replace whatever voice input
-you already use, or touch the cloud unless you explicitly opt in.
+you already use, or touch the cloud unless you explicitly opt in. It does run
+commands and put what it finds in front of Claude, so read
+[Things worth knowing before you install](#things-worth-knowing-before-you-install)
+first.
 
 ## Why OpenWhispr
 
@@ -126,6 +129,49 @@ today: `openwhispr --local notes search "<phrase>" --limit 20`, then
   `POST /keys/create` for a scoped key), always with consent.
 - No hooks, no MCP servers, no executable code, no self-updater, no
   telemetry. The plugin is a manifest and a Markdown file.
+
+## Things worth knowing before you install
+
+The parts people might reasonably raise an eyebrow at, named up front.
+
+- **What Claude reads leaves your machine.** OpenWhispr is local, and the
+  CLI talks to it over loopback. But when Claude searches your dictations,
+  the matching text becomes part of your conversation with Claude, and is
+  handled under your Claude plan's data terms. "Local" describes where
+  OpenWhispr keeps your words, not where they go once an agent reads them.
+  Dictation can contain anything you said aloud, so ask for a narrow search
+  rather than "everything from last week" if that matters.
+- **The consent rules are instructions, not a sandbox.** The skill tells
+  Claude to read freely, to write, update or delete only with your say-so
+  each time, and to touch the cloud only when you ask in that turn. That is
+  guidance to the model. The hard gate is Claude Code's own permission
+  prompt on each Bash command, so read what you approve, especially
+  anything with `--remote`, `delete`, `auth login`, or `--content`.
+- **It runs commands.** The skill's whole job is to have Claude run the
+  `openwhispr` CLI through Bash. There is no other code in this plugin, but
+  the CLI is third-party software installed globally with npm
+  (`@openwhispr/cli`). You are trusting that package and the OpenWhispr
+  desktop app; this plugin vouches for neither.
+- **Cloud setup can mint a permanent key.** If you ask for cloud access
+  and have no desktop app, the skill describes an email-code flow that ends
+  in a scoped API key stored in the CLI's own config. It runs only when you
+  ask for cloud setup, and it needs you to paste the emailed code, so it
+  cannot finish on its own. It is the most sensitive thing in the skill,
+  which is why it is spelled out here.
+- **Notes persist and other agents can read them.** Notes written as
+  handoffs stay in your OpenWhispr notes (and in the on-disk export, if you
+  enabled it) until you delete them. Anything another agent or tool can
+  read there can read what Claude wrote.
+- **Tested for structure, not for the app.** The test suite checks the
+  manifest, the skill's frontmatter, the README's links and the absence of
+  hooks or code. It does not drive a live OpenWhispr app. Command syntax
+  comes from OpenWhispr's published CLI docs, and
+  CLI flags can change; if one drifts, please open an issue.
+- **Product claims are theirs, not ours.** Feature and pricing descriptions
+  here (paid cloud tiers, model lists, integrations) reflect OpenWhispr's
+  docs and the screenshots shown when this was written. They may be out of
+  date, and this project is not affiliated with or endorsed by OpenWhispr
+  or Anthropic.
 
 ## Attribution
 
