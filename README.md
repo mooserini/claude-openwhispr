@@ -209,14 +209,15 @@ claude-openwhispr/
 │   ├── plugin.json
 │   └── marketplace.json
 ├── skills/openwhispr/SKILL.md
-├── icon.png
-├── docs/social-preview.png
-├── docs/screenshots/
 ├── tests/test_plugin.py
 ├── README.md
 ├── CONTRIBUTING.md
 └── LICENSE
 ```
+
+The plugin icon and the README screenshots are PNG files kept alongside these
+(screenshots under the docs folder). Nothing runs or loads them; they exist
+only to be looked at.
 
 ## Smoke test
 
