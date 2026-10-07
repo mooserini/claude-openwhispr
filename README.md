@@ -165,8 +165,12 @@ The parts people might reasonably raise an eyebrow at, named up front.
 - **Tested for structure, not for the app.** The test suite checks the
   manifest, the skill's frontmatter, the README's links and the absence of
   hooks or code. It does not drive a live OpenWhispr app. Command syntax
-  comes from OpenWhispr's published CLI docs, and
-  CLI flags can change; if one drifts, please open an issue.
+  comes from OpenWhispr's published CLI docs, and the author has run the
+  commands against the live app. The author also reports using the same
+  skill text with other agents, including small local models in LM Studio
+  and OpenCode; that is a firsthand report, not something this repo's
+  tests cover, and how well a small model follows the consent rules will
+  vary. CLI flags can change; if one drifts, please open an issue.
 - **Product claims are theirs, not ours.** Feature and pricing descriptions
   here (paid cloud tiers, model lists, integrations) reflect OpenWhispr's
   docs and the screenshots shown when this was written. They may be out of
